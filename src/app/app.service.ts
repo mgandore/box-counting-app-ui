@@ -6,7 +6,7 @@ import { Observable } from "rxjs";
 export class AppService {
 	constructor(private http: HttpClient) { }
 
-	uploadImage(formData: FormData): Observable<Object> {
+	public uploadImage(formData: FormData): Observable<any> {
 		return this.http.post('http://localhost:3000/', formData);
 	}
 }
