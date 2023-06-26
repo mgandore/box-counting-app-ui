@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { AppService } from "./app.service";
 
 export interface ProcessingResponse {
-	heatmapImageSourceName: string;
+	heatmapImageSourceName: number[][];
 	grayscaleData: number[][];
 
 }
@@ -33,6 +33,7 @@ export class AppComponent {
 			this.appService.uploadImage(formData).subscribe({
 				next: (response: ProcessingResponse) => {
 					console.log("Image uploaded successfully", response)
+					console.log(response.heatmapImageSourceName)
 					this.heatmapImageSource = this.OUTPUTS_BASE_PATH + response.heatmapImageSourceName
 				},
 				error: (error: any) => {
