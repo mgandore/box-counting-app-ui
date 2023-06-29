@@ -1,7 +1,15 @@
-<form (submit)="uploadImage($event)">
-	<input type="file" (change)="onFileSelected($event)" accept="image/*">
-	<button type="submit">Upload</button>
-</form>
-
-
-<img [src]="heatmapImageSource" alt="Resulted heatmap">
+<h1>Box-Counting Image Scanner</h1>
+<div class="component-container">
+	<div class="image-container">
+		<img [src]="heatmapImageSource" alt="Resulted heatmap">
+	</div>
+	<form (submit)="uploadImage($event)" class="form-container">
+		<label for="images" class="drop-container">
+			<span class="drop-title">Drop files here</span>
+			or
+			<input (change)="onFileSelected($event)" type="file" id="images" accept="image/*" required>
+		</label>
+		<button type="submit" class="button">Upload</button>
+	</form>
+	
+</div>
